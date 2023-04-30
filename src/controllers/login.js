@@ -50,8 +50,25 @@ const getAll = async (_req, res, next) => {
   }
 };
 
+const getById = async (req, res, next) => {
+  const { params: { id } } = req;
+  try {
+    const user = await services.getById(id);
+    if (user) {
+      return res.status(StatusCodes.OK).json(user);
+    }
+    throw new HandleError(
+      StatusCodes.INTERNAL_SERVER_ERROR,
+      'Erro ao tentar listar usuário pelo id',
+    );
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createUser,
   login,
   getAll,
+  getById,
 };

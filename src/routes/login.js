@@ -6,6 +6,9 @@ const loginRouter = Router();
 
 loginRouter.post('/user', createPassHash, controllers.createUser);
 loginRouter.post('/login', controllers.login);
-loginRouter.get('/users', validateToken, controllers.getAll);
+
+loginRouter.use(validateToken);
+loginRouter.get('/users/:id', controllers.getById);
+loginRouter.get('/users', controllers.getAll);
 
 module.exports = loginRouter;

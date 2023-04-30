@@ -31,7 +31,7 @@ const validateToken = (req, res, next) => {
       return next(error);
     }
 
-    console.log(decoded, 'infos token');
+    // console.log(decoded, 'infos token');
     req.user = decoded;
     return next();
   });

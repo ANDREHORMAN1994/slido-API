@@ -28,8 +28,15 @@ const getAll = async () => {
   return null;
 };
 
+const getById = async (id) => {
+  const user = await models.getById(id);
+  if (user) return user;
+  return null;
+};
+
 module.exports = {
   createUser,
   login,
   getAll,
+  getById,
 };
