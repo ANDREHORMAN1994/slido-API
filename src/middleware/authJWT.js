@@ -37,7 +37,20 @@ const validateToken = (req, res, next) => {
   });
 };
 
+const validateAdmin = (req, res, next) => {
+  const { role } = req.user;
+  if (role !== 'admin') {
+    const error = new HandleError(
+      StatusCodes.UNAUTHORIZED,
+      'Esse usuário não tem permissão de realizar essa ação',
+    );
+    return next(error);
+  }
+  next();
+};
+
 module.exports = {
   createHashLogin,
   validateToken,
+  validateAdmin,
 };
