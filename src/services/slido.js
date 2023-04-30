@@ -12,7 +12,21 @@ const getAllQuestion = async () => {
   return null;
 };
 
+const updateQuestion = async (id, info) => {
+  const question = await models.updateQuestion(id, info);
+  if (question) return question;
+  return null;
+};
+
+const deleteQuestion = async (id) => {
+  const result = await models.deleteQuestion(id);
+  if (result) return result;
+  return null;
+};
+
 module.exports = {
   createQuestion,
   getAllQuestion,
+  updateQuestion,
+  deleteQuestion,
 };

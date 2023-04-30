@@ -2,7 +2,9 @@ const {
   createUser, login, getAllUser, getUserById, updateUser, deleteUserById,
 } = require('./login');
 
-const { createQuestion, getAllQuestion } = require('./slido');
+const {
+  createQuestion, getAllQuestion, updateQuestion, deleteQuestion,
+} = require('./slido');
 
 module.exports = {
   createUser,
@@ -13,4 +15,6 @@ module.exports = {
   deleteUserById,
   createQuestion,
   getAllQuestion,
+  updateQuestion,
+  deleteQuestion,
 };
