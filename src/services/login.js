@@ -34,9 +34,16 @@ const getById = async (id) => {
   return null;
 };
 
+const update = async (id, info) => {
+  const user = await models.update(id, info);
+  if (user) return user;
+  return null;
+};
+
 module.exports = {
   createUser,
   login,
   getAll,
   getById,
+  update,
 };

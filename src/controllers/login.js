@@ -66,9 +66,30 @@ const getById = async (req, res, next) => {
   }
 };
 
+const update = async (req, res, next) => {
+  const { params: { id }, body, password } = req;
+  const infoUser = {
+    ...body,
+    password,
+  };
+  try {
+    const user = await services.update(id, infoUser);
+    if (user) {
+      return res.status(StatusCodes.OK).json(user);
+    }
+    throw new HandleError(
+      StatusCodes.INTERNAL_SERVER_ERROR,
+      'Erro ao tentar atualizar o usuário, provavelmente o email já existe',
+    );
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createUser,
   login,
   getAll,
   getById,
+  update,
 };

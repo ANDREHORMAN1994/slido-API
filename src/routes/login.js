@@ -10,5 +10,6 @@ loginRouter.post('/login', controllers.login);
 loginRouter.use(validateToken);
 loginRouter.get('/users/:id', controllers.getById);
 loginRouter.get('/users', controllers.getAll);
+loginRouter.patch('/users/:id', createPassHash, controllers.update);
 
 module.exports = loginRouter;

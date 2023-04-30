@@ -39,9 +39,24 @@ const getById = async (id) => {
   return null;
 };
 
+const update = async (id, info) => {
+  const result = await collection.findOne({ email: info.email });
+  if (!result) {
+    const user = await collection.updateOne({ _id: new ObjectId(id) }, {
+      $set: info,
+    });
+    if (user) {
+      const newUser = await getById(id);
+      return newUser;
+    }
+  }
+  return null;
+};
+
 module.exports = {
   createUser,
   login,
   getAll,
   getById,
+  update,
 };
