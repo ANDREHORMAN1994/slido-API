@@ -8,10 +8,9 @@ loginRouter.post('/user', createPassHash, controllers.createUser);
 loginRouter.post('/login', controllers.login);
 
 loginRouter.use(validateToken);
-loginRouter.use(validateAdmin);
-loginRouter.get('/users/:id', controllers.getById);
-loginRouter.get('/users', controllers.getAll);
-loginRouter.patch('/users/:id', createPassHash, controllers.update);
-loginRouter.delete('/users/:id', controllers.deleteById);
+loginRouter.get('/users/:id', validateAdmin, controllers.getUserById);
+loginRouter.get('/users', validateAdmin, controllers.getAllUser);
+loginRouter.patch('/users/:id', validateAdmin, createPassHash, controllers.updateUser);
+loginRouter.delete('/users/:id', validateAdmin, controllers.deleteUserById);
 
 module.exports = loginRouter;

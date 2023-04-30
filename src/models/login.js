@@ -26,32 +26,32 @@ const login = async ({ email }) => {
   return null;
 };
 
-const getAll = async () => {
+const getAllUser = async () => {
   const result = await collection.find();
   const allUsers = await result.toArray();
   if (allUsers) return allUsers;
   return null;
 };
 
-const getById = async (id) => {
+const getUserById = async (id) => {
   const user = await collection.findOne({ _id: new ObjectId(id) });
   if (user) return user;
   return null;
 };
 
-const deleteById = async (id) => {
+const deleteUserById = async (id) => {
   const result = await collection.deleteOne({ _id: new ObjectId(id) });
   return result.deletedCount > 0;
 };
 
-const update = async (id, info) => {
+const updateUser = async (id, info) => {
   const result = await collection.findOne({ email: info.email });
   if (!result) {
     const user = await collection.updateOne({ _id: new ObjectId(id) }, {
       $set: info,
     });
     if (user) {
-      const newUser = await getById(id);
+      const newUser = await getUserById(id);
       return newUser;
     }
   }
@@ -61,8 +61,8 @@ const update = async (id, info) => {
 module.exports = {
   createUser,
   login,
-  getAll,
-  getById,
-  update,
-  deleteById,
+  getAllUser,
+  getUserById,
+  updateUser,
+  deleteUserById,
 };

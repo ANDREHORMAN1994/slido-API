@@ -35,7 +35,7 @@ const login = async (req, res, next) => {
   }
 };
 
-const getAll = async (_req, res, next) => {
+const getAllUser = async (_req, res, next) => {
   try {
     const allUsers = await services.getAll();
     if (allUsers) {
@@ -50,7 +50,7 @@ const getAll = async (_req, res, next) => {
   }
 };
 
-const getById = async (req, res, next) => {
+const getUserById = async (req, res, next) => {
   const { params: { id } } = req;
   try {
     const user = await services.getById(id);
@@ -66,7 +66,7 @@ const getById = async (req, res, next) => {
   }
 };
 
-const deleteById = async (req, res, next) => {
+const deleteUserById = async (req, res, next) => {
   const { params: { id } } = req;
   try {
     const result = await services.deleteById(id);
@@ -82,7 +82,7 @@ const deleteById = async (req, res, next) => {
   }
 };
 
-const update = async (req, res, next) => {
+const updateUser = async (req, res, next) => {
   const { params: { id }, body, password } = req;
   const infoUser = {
     ...body,
@@ -105,8 +105,8 @@ const update = async (req, res, next) => {
 module.exports = {
   createUser,
   login,
-  getAll,
-  getById,
-  update,
-  deleteById,
+  getAllUser,
+  getUserById,
+  updateUser,
+  deleteUserById,
 };

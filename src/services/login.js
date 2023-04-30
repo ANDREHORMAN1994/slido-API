@@ -22,25 +22,25 @@ const login = async (user) => {
   );
 };
 
-const getAll = async () => {
+const getAllUser = async () => {
   const allUsers = await models.getAll();
   if (allUsers) return allUsers;
   return null;
 };
 
-const getById = async (id) => {
+const getUserById = async (id) => {
   const user = await models.getById(id);
   if (user) return user;
   return null;
 };
 
-const deleteById = async (id) => {
+const deleteUserById = async (id) => {
   const result = await models.deleteById(id);
   if (result) return result;
   return null;
 };
 
-const update = async (id, info) => {
+const updateUser = async (id, info) => {
   const user = await models.update(id, info);
   if (user) return user;
   return null;
@@ -49,8 +49,8 @@ const update = async (id, info) => {
 module.exports = {
   createUser,
   login,
-  getAll,
-  getById,
-  update,
-  deleteById,
+  getAllUser,
+  getUserById,
+  updateUser,
+  deleteUserById,
 };
