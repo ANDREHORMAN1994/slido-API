@@ -39,6 +39,11 @@ const getById = async (id) => {
   return null;
 };
 
+const deleteById = async (id) => {
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+};
+
 const update = async (id, info) => {
   const result = await collection.findOne({ email: info.email });
   if (!result) {
@@ -59,4 +64,5 @@ module.exports = {
   getAll,
   getById,
   update,
+  deleteById,
 };

@@ -34,6 +34,12 @@ const getById = async (id) => {
   return null;
 };
 
+const deleteById = async (id) => {
+  const result = await models.deleteById(id);
+  if (result) return result;
+  return null;
+};
+
 const update = async (id, info) => {
   const user = await models.update(id, info);
   if (user) return user;
@@ -46,4 +52,5 @@ module.exports = {
   getAll,
   getById,
   update,
+  deleteById,
 };

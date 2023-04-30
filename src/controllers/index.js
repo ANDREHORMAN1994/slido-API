@@ -1,5 +1,5 @@
 const {
-  createUser, login, getAll, getById, update,
+  createUser, login, getAll, getById, update, deleteById,
 } = require('./login');
 
 module.exports = {
@@ -8,4 +8,5 @@ module.exports = {
   getAll,
   getById,
   update,
+  deleteById,
 };

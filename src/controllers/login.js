@@ -66,6 +66,22 @@ const getById = async (req, res, next) => {
   }
 };
 
+const deleteById = async (req, res, next) => {
+  const { params: { id } } = req;
+  try {
+    const result = await services.deleteById(id);
+    if (result) {
+      return res.status(StatusCodes.NO_CONTENT).send();
+    }
+    throw new HandleError(
+      StatusCodes.INTERNAL_SERVER_ERROR,
+      'Erro ao tentar deletar um usuário pelo id',
+    );
+  } catch (error) {
+    next(error);
+  }
+};
+
 const update = async (req, res, next) => {
   const { params: { id }, body, password } = req;
   const infoUser = {
@@ -92,4 +108,5 @@ module.exports = {
   getAll,
   getById,
   update,
+  deleteById,
 };

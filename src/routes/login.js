@@ -11,5 +11,6 @@ loginRouter.use(validateToken);
 loginRouter.get('/users/:id', controllers.getById);
 loginRouter.get('/users', controllers.getAll);
 loginRouter.patch('/users/:id', createPassHash, controllers.update);
+loginRouter.delete('/users/:id', controllers.deleteById);
 
 module.exports = loginRouter;
