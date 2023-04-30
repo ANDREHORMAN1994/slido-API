@@ -23,25 +23,25 @@ const login = async (user) => {
 };
 
 const getAllUser = async () => {
-  const allUsers = await models.getAll();
+  const allUsers = await models.getAllUser();
   if (allUsers) return allUsers;
   return null;
 };
 
 const getUserById = async (id) => {
-  const user = await models.getById(id);
+  const user = await models.getUserById(id);
   if (user) return user;
   return null;
 };
 
 const deleteUserById = async (id) => {
-  const result = await models.deleteById(id);
+  const result = await models.deleteUserById(id);
   if (result) return result;
   return null;
 };
 
 const updateUser = async (id, info) => {
-  const user = await models.update(id, info);
+  const user = await models.updateUser(id, info);
   if (user) return user;
   return null;
 };

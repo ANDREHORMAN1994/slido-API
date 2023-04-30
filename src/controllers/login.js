@@ -37,7 +37,7 @@ const login = async (req, res, next) => {
 
 const getAllUser = async (_req, res, next) => {
   try {
-    const allUsers = await services.getAll();
+    const allUsers = await services.getAllUser();
     if (allUsers) {
       return res.status(StatusCodes.OK).json(allUsers);
     }
@@ -53,7 +53,7 @@ const getAllUser = async (_req, res, next) => {
 const getUserById = async (req, res, next) => {
   const { params: { id } } = req;
   try {
-    const user = await services.getById(id);
+    const user = await services.getUserById(id);
     if (user) {
       return res.status(StatusCodes.OK).json(user);
     }
@@ -69,7 +69,7 @@ const getUserById = async (req, res, next) => {
 const deleteUserById = async (req, res, next) => {
   const { params: { id } } = req;
   try {
-    const result = await services.deleteById(id);
+    const result = await services.deleteUserById(id);
     if (result) {
       return res.status(StatusCodes.NO_CONTENT).send();
     }
@@ -89,7 +89,7 @@ const updateUser = async (req, res, next) => {
     password,
   };
   try {
-    const user = await services.update(id, infoUser);
+    const user = await services.updateUser(id, infoUser);
     if (user) {
       return res.status(StatusCodes.OK).json(user);
     }
