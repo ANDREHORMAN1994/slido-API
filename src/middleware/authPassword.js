@@ -21,18 +21,18 @@ const createPassHash = (req, _res, next) => {
   }
 };
 
-const comparePassHash = (password, hash) => {
-  bcrypt.compare(password, hash, (err, result) => {
-    if (err || !result) {
-      throw new HandleError(
-        StatusCodes.INTERNAL_SERVER_ERROR,
-        'A senha estar errada ou incompatível',
-      );
-    } else if (result) {
+const comparePassHash = (password, user, res, next) => {
+  bcrypt.compare(password, user.password, (_err, result) => {
+    if (result) {
       console.log('Senha correta!');
-    } else {
-      console.log('Senha incorreta!');
+      return res.status(StatusCodes.OK).json({ user });
     }
+    console.log('Senha incorreta!');
+    const error = new HandleError(
+      StatusCodes.INTERNAL_SERVER_ERROR,
+      'A senha está errada ou incompatível',
+    );
+    next(error);
   });
 };
 

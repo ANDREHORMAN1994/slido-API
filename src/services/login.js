@@ -12,8 +12,14 @@ const createUser = async (user) => {
 };
 
 const login = async (user) => {
-  const result = await models.login(user);
-  return result;
+  const info = await models.login(user);
+  if (info) {
+    return info;
+  }
+  throw new HandleError(
+    StatusCodes.INTERNAL_SERVER_ERROR,
+    'Esse usuário não existe',
+  );
 };
 
 module.exports = {

@@ -19,10 +19,13 @@ const createUser = async ({ email, password, role }) => {
   return null;
 };
 
-const login = (user) => {
-
+const login = async ({ email }) => {
+  const user = await collection.findOne({ email });
+  if (user) return user;
+  return null;
 };
 
 module.exports = {
   createUser,
+  login,
 };

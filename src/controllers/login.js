@@ -1,6 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
 const services = require('../services');
 const HandleError = require('../utils/handleError');
+const { comparePassHash } = require('../middleware');
 
 const createUser = async (req, res, next) => {
   const { body, password } = req;
@@ -25,9 +26,8 @@ const createUser = async (req, res, next) => {
 const login = async (req, res, next) => {
   const { body } = req;
   try {
-    const result = await services.login(body);
-    console.log(result, 'controller');
-    // verificar credenciais do usuário
+    const user = await services.login(body);
+    comparePassHash(body.password, user, res, next);
   } catch (error) {
     next(error);
   }
