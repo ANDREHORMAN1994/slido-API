@@ -12,7 +12,7 @@ const createHashLogin = (infoUser) => {
 
 const validateToken = (req, res, next) => {
   const authHeader = req.headers.authorization;
-  const { token } = req;
+  const { headers: { authorization: token } } = req;
 
   if (!authHeader) {
     const error = new HandleError(
@@ -31,8 +31,8 @@ const validateToken = (req, res, next) => {
       return next(error);
     }
 
-    console.log(decoded);
-    req.userId = decoded.id;
+    console.log(decoded, 'infos token');
+    req.user = decoded;
     return next();
   });
 };

@@ -22,7 +22,14 @@ const login = async (user) => {
   );
 };
 
+const getAll = async () => {
+  const allUsers = await models.getAll();
+  if (allUsers) return allUsers;
+  return null;
+};
+
 module.exports = {
   createUser,
   login,
+  getAll,
 };

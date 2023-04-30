@@ -25,7 +25,7 @@ const comparePassHash = (password, user, res, next) => {
   bcrypt.compare(password, user.password, (_err, result) => {
     if (result) {
       console.log('Senha correta!');
-      return res.status(StatusCodes.OK).json({ user });
+      return res.status(StatusCodes.OK).json(user);
     }
     console.log('Senha incorreta!');
     const error = new HandleError(

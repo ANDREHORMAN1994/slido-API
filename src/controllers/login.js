@@ -12,7 +12,7 @@ const createUser = async (req, res, next) => {
   try {
     const newUser = await services.createUser(infoUser);
     if (newUser) {
-      return res.status(StatusCodes.CREATED).json({ newUser });
+      return res.status(StatusCodes.CREATED).json(newUser);
     }
     throw new HandleError(
       StatusCodes.INTERNAL_SERVER_ERROR,
@@ -35,7 +35,23 @@ const login = async (req, res, next) => {
   }
 };
 
+const getAll = async (_req, res, next) => {
+  try {
+    const allUsers = await services.getAll();
+    if (allUsers) {
+      return res.status(StatusCodes.OK).json(allUsers);
+    }
+    throw new HandleError(
+      StatusCodes.INTERNAL_SERVER_ERROR,
+      'Erro ao tentar listar todos os usuários',
+    );
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createUser,
   login,
+  getAll,
 };

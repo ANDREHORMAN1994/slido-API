@@ -25,7 +25,15 @@ const login = async ({ email }) => {
   return null;
 };
 
+const getAll = async () => {
+  const result = await collection.find();
+  const allUsers = await result.toArray();
+  if (allUsers) return allUsers;
+  return null;
+};
+
 module.exports = {
   createUser,
   login,
+  getAll,
 };
