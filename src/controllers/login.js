@@ -1,7 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
 const services = require('../services');
 const HandleError = require('../utils/handleError');
-const { comparePassHash } = require('../middleware');
+const { comparePassHash, createHashLogin } = require('../middleware');
 
 const createUser = async (req, res, next) => {
   const { body, password } = req;
@@ -27,7 +27,9 @@ const login = async (req, res, next) => {
   const { body } = req;
   try {
     const user = await services.login(body);
-    comparePassHash(body.password, user, res, next);
+    const token = createHashLogin(user);
+    req.token = token;
+    comparePassHash(body.password, { ...user, token }, res, next);
   } catch (error) {
     next(error);
   }
