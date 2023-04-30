@@ -1,3 +1,14 @@
+# SLIDO API
+
+API criada para cadastrar usuários, realizar login como cliente ou admin, realizando o CRUD completo de perguntas e respostas, sendo capaz de criar, visualizar, editar e remover cada pergunta.
+
+## TASKS
+
+ - Rota `/user`:
+    - Cadastrar usuários novos;
+    - Validação feita por email;
+    - Criptografia da senha;
+
 
 <h1 align="center">
 <br>Padrão de commits, Utilizei a documentação do **Conventional Commits**, Commits Semânticos
