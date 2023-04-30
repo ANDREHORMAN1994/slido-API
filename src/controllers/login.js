@@ -3,10 +3,10 @@ const services = require('../services');
 const HandleError = require('../utils/handleError');
 
 const createUser = async (req, res, next) => {
-  const { body, passHash } = req;
+  const { body, password } = req;
   const infoUser = {
-    email: body.email,
-    password: passHash,
+    ...body,
+    password,
   };
   try {
     const newUser = await services.createUser(infoUser);
@@ -22,6 +22,18 @@ const createUser = async (req, res, next) => {
   }
 };
 
+const login = async (req, res, next) => {
+  const { body } = req;
+  try {
+    const result = await services.login(body);
+    console.log(result, 'controller');
+    // verificar credenciais do usuário
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createUser,
+  login,
 };

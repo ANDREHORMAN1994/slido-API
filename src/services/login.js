@@ -11,6 +11,12 @@ const createUser = async (user) => {
   );
 };
 
+const login = async (user) => {
+  const result = await models.login(user);
+  return result;
+};
+
 module.exports = {
   createUser,
+  login,
 };

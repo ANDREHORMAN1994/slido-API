@@ -13,7 +13,7 @@ const createPassHash = (req, _res, next) => {
           'Erro ao tentar criar o hash da senha',
         );
       }
-      req.passHash = hash;
+      req.password = hash;
       next();
     });
   } catch (error) {

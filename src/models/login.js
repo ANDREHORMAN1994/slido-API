@@ -2,17 +2,25 @@ const db = require('./connect');
 
 const collection = db.collection('users');
 
-const createUser = async (user) => {
-  const result = await collection.findOne({ email: user.email });
+const createUser = async ({ email, password, role }) => {
+  const result = await collection.findOne({ email });
   if (!result) {
-    const { insertedId } = await collection.insertOne(user);
+    const newUser = {
+      email,
+      password,
+      role: role || 'user',
+    };
+    const { insertedId } = await collection.insertOne(newUser);
     return {
-      id: insertedId,
-      email: user.email,
-      password: user.password,
+      _id: insertedId,
+      ...newUser,
     };
   }
   return null;
+};
+
+const login = (user) => {
+
 };
 
 module.exports = {
