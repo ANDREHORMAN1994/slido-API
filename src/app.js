@@ -7,7 +7,9 @@ const allRoutes = require('./routes');
 const app = express();
 swagger(app);
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+}));
 app.use(express.json());
 
 app.get('/', (_req, res) => {
