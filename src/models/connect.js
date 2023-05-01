@@ -6,10 +6,16 @@ const {
   DB_HOST = 'localhost',
   DB_PORT = '27017',
   DB_NAME = 'mydatabase',
+  MONGOUSER,
+  MONGOPASSWORD,
+  MONGOHOST,
+  MONGOPORT,
   MONGO_URL,
 } = env;
 
-const URI = MONGO_URL || `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+const LOCAL_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+const MONGO_URI = `mongodb://${MONGOUSER}:${MONGOPASSWORD}@${MONGOHOST}:${MONGOPORT}`;
+const URI = MONGO_URL || MONGO_URI;
 
 const client = new MongoClient(
   URI,
