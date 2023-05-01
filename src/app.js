@@ -1,11 +1,11 @@
 require('express-async-errors');
 const express = require('express');
 const cors = require('cors');
-// const swagger = require('../swagger');
-// const allRoutes = require('./routes');
+const swagger = require('../swagger');
+const allRoutes = require('./routes');
 
 const app = express();
-// swagger(app);
+swagger(app);
 
 app.use(cors({
   origin: '*',
@@ -16,7 +16,7 @@ app.get('/', (_req, res) => {
   res.send('SLIDO API RODANDO 🥳🥳🥳');
 });
 
-// app.use(allRoutes);
+app.use(allRoutes);
 
 app.use((err, _req, res, _next) => {
   const { message, statusCode } = err;
