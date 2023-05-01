@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const swagger = require('../swagger');
 const allRoutes = require('./routes');
+const html = require('./utils/initialHTML');
 
 const app = express();
 swagger(app);
@@ -13,7 +14,7 @@ app.use(cors({
 app.use(express.json());
 
 app.get('/', (_req, res) => {
-  res.send('SLIDO API RODANDO 🥳🥳🥳');
+  res.send(html);
 });
 
 app.use(allRoutes);

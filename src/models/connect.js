@@ -15,7 +15,10 @@ const {
 
 const LOCAL_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 const MONGO_URI = `mongodb://${MONGOUSER}:${MONGOPASSWORD}@${MONGOHOST}:${MONGOPORT}`;
-const URI = MONGO_URL || MONGO_URI || LOCAL_URI;
+
+const verifyMongo = MONGOUSER && MONGOPASSWORD && MONGOHOST && MONGOPORT;
+
+const URI = MONGO_URL || (verifyMongo && MONGO_URI) || LOCAL_URI;
 
 const client = new MongoClient(
   URI,
