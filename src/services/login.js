@@ -6,8 +6,8 @@ const createUser = async (user) => {
   const newUser = await models.createUser(user);
   if (newUser) return newUser;
   throw new HandleError(
-    StatusCodes.INTERNAL_SERVER_ERROR,
-    'Esse email já foi cadastrado',
+    StatusCodes.CONFLICT,
+    'Já existe um usuário cadastrado com esse email.',
   );
 };
 
@@ -17,8 +17,8 @@ const login = async (user) => {
     return info;
   }
   throw new HandleError(
-    StatusCodes.INTERNAL_SERVER_ERROR,
-    'Esse usuário não existe',
+    StatusCodes.NOT_FOUND,
+    'Esse usuário não existe.',
   );
 };
 
@@ -43,7 +43,10 @@ const deleteUserById = async (id) => {
 const updateUser = async (id, info) => {
   const user = await models.updateUser(id, info);
   if (user) return user;
-  return null;
+  throw new HandleError(
+    StatusCodes.CONFLICT,
+    'Já existe um usuário cadastrado com esse email.',
+  );
 };
 
 module.exports = {

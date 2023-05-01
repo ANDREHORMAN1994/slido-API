@@ -29,8 +29,8 @@ const comparePassHash = (password, user, res, next) => {
     }
     console.log('Senha incorreta!');
     const error = new HandleError(
-      StatusCodes.INTERNAL_SERVER_ERROR,
-      'A senha está errada ou incompatível',
+      StatusCodes.UNAUTHORIZED,
+      'A senha está errada ou incompatível.',
     );
     next(error);
   });
