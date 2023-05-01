@@ -1,10 +1,17 @@
 require('express-async-errors');
 const express = require('express');
 const cors = require('cors');
+const swagger = require('../swagger');
 const allRoutes = require('./routes');
 
 const app = express();
-app.use(cors());
+swagger(app);
+
+const corsOptions = {
+  origin: 'http://localhost:3001',
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use(allRoutes);

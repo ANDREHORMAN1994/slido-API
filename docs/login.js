@@ -24,9 +24,9 @@
  *           type: string
  *           description: Identificação do cliente como "user" ou "admin".
  *       example:
- *         email: andre@hotmail.com
- *         password: 1234567
- *         role: admin
+ *         email: "andre@hotmail.com"
+ *         password: "1234567"
+ *         role: "admin"
  */
 
 /**
@@ -66,10 +66,10 @@
  *                   type: string
  *                   description: Identificação do cliente como usuário ou administrador.
  *             example:
- *               _id: abc123
- *               email: andre@hotmail.com
- *               password: 1234567
- *               role: admin
+ *               _id: "abc123"
+ *               email: "andre@hotmail.com"
+ *               password: "1234567"
+ *               role: "admin"
  *       400:
  *         description: Campos inválidos ou faltando.
  *       409:
@@ -125,11 +125,11 @@
  *                   type: string
  *                   description: Um hash com caracteres.
  *             example:
- *               _id: abc123
- *               email: andre@hotmail.com
- *               password: 1234567
- *               role: admin
- *               token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDRkZTYyMDc2MzU5MDVmM2QxNzZjMTEiLCJlbWFpbCI6ImFuZHJlQGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkbXovUjloS1FoSWhFaFpvakhFM3FiLmREZFFoUlJPcFNGL1FoZ3dsR0RtSGFIclBIWHpmNC4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODI5MDQzMjMsImV4cCI6MTY4MjkwNzkyM30.ooLlb-0bWiWNsqFmyCspIfNa-b-vY_WgL0vaPt2kPEA
+ *               _id: "abc123"
+ *               email: "andre@hotmail.com"
+ *               password: "1234567"
+ *               role: "admin"
+ *               token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDRkZTYyMDc2MzU5MDVmM2QxNzZjMTEiLCJlbWFpbCI6ImFuZHJlQGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkbXovUjloS1FoSWhFaFpvakhFM3FiLmREZFFoUlJPcFNGL1FoZ3dsR0RtSGFIclBIWHpmNC4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODI5MDQzMjMsImV4cCI6MTY4MjkwNzkyM30.ooLlb-0bWiWNsqFmyCspIfNa-b-vY_WgL0vaPt2kPEA"
  *       400:
  *         description: Campos inválidos ou faltando.
  *       401:
@@ -142,10 +142,10 @@
  * @swagger
  * /users/{id}:
  *   get:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Retorna um usuário pelo ID.
  *     description: Retorna um usuário com o ID especificado.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Usuário
  *     parameters:
@@ -177,10 +177,10 @@
  *                   type: string
  *                   description: Identificação do cliente como usuário ou administrador.
  *             example:
- *               _id: abc123
- *               email: andre@hotmail.com
- *               password: 1234567
- *               role: admin
+ *               _id: "abc123"
+ *               email: "andre@hotmail.com"
+ *               password: "1234567"
+ *               role: "admin"
  *       400:
  *         description: ID inválido ou faltando.
  *       500:
@@ -191,10 +191,10 @@
  * @swagger
  * /users:
  *   get:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Retorna todos os usuários cadastrados.
  *     description: Retorna um array de objetos com todos os usuários cadastrados.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Usuário
  *     responses:
@@ -219,14 +219,14 @@
  *                   type: string
  *                   description: Identificação do cliente como usuário ou administrador.
  *             example:
- *               - _id: 1
- *                 email: andre@hotmail.com
- *                 password: 1234567
- *                 role: admin
- *               - _id: 2
- *                 email: horman@hotmail.com
- *                 password: 1234567
- *                 role: user
+ *               - _id: "1"
+ *                 email: "andre@hotmail.com"
+ *                 password: "1234567"
+ *                 role: "admin"
+ *               - _id: "2"
+ *                 email: "horman@hotmail.com"
+ *                 password: "1234567"
+ *                 role: "user"
  *       500:
  *         description: Erro interno ao tentar acessar todos os usuários.
  */
@@ -235,10 +235,10 @@
  * @swagger
  * /users/{id}:
  *   patch:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Atualiza as informações de um usuário.
  *     description: Retorna um usuário atualizado com o ID especificado.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Usuário
  *     parameters:
@@ -259,11 +259,11 @@
  *               email:
  *                 type: string
  *                 description: Email do usuário.
- *                 example: andre@hotmail.com
+ *                 example: "andre@hotmail.com"
  *               password:
  *                 type: string
  *                 description: Senha do usuário.
- *                 example: 1234567
+ *                 example: "1234567"
  *     responses:
  *       200:
  *         description: Retorna um objeto com as informações do Usuário atualizado com sucesso.
@@ -286,10 +286,10 @@
  *                   type: string
  *                   description: Identificação do cliente como usuário ou administrador.
  *             example:
- *               _id: abc123
- *               email: usuario.editado@hotmail.com
- *               password: 1234567
- *               role: admin
+ *               _id: "abc123"
+ *               email: "usuario.editado@hotmail.com"
+ *               password: "1234567"
+ *               role: "admin"
  *       400:
  *         description: Campos inválidos ou faltando.
  *       409:
@@ -302,10 +302,10 @@
  * @swagger
  * /users/{id}:
  *   delete:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Deleta um usuário pelo seu ID.
  *     description: Deleta o usuário identificado pelo ID fornecido na rota.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Usuário
  *     parameters:

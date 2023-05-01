@@ -6,12 +6,13 @@ const createPassHash = (req, _res, next) => {
   const { body: { password } } = req;
   const saltRounds = 10;
   try {
-    bcrypt.hash(password, saltRounds, (err, hash) => {
+    bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
       if (err || !hash) {
-        throw new HandleError(
+        const error = new HandleError(
           StatusCodes.INTERNAL_SERVER_ERROR,
           'Erro ao tentar criar o hash da senha',
         );
+        return next(error);
       }
       req.password = hash;
       next();

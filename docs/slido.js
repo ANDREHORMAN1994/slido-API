@@ -38,9 +38,9 @@
  *               type: string
  *               format: date-time
  *       example:
- *         question: Primeira pergunta xxx
+ *         question: "Primeira pergunta xxx1"
  *         answers: [ "resposta 01", "resposta 02", "resposta 03"]
- *         author: andre@hotmail.com
+ *         author: "andre@hotmail.com"
  *         createdAt: 2023-04-30T20:59:59.691Z
  *         updatedAt: 2023-04-30T21:00:50.925Z
  */
@@ -49,10 +49,10 @@
  * @swagger
  * /slido:
  *   post:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Cadastra uma nova pergunta.
  *     description: Cria uma nova pergunta com os dados fornecidos no corpo da requisição.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Slido
  *     requestBody:
@@ -65,7 +65,7 @@
  *             properties:
  *               question:
  *                 type: string
- *                 example: Primeira pergunta xxx
+ *                 example: "Primeira pergunta xxx"
  *               answers:
  *                 type: array
  *                 example: []
@@ -77,10 +77,10 @@
  *             schema:
  *               $ref: '#/components/schemas/slido'
  *             example:
- *               _id: abc123
- *               question: Primeira pergunta xxx
+ *               _id: "abc123"
+ *               question: "Primeira pergunta xxx"
  *               answers: []
- *               author: andre@hotmail.com
+ *               author: "andre@hotmail.com"
  *               createdAt: 2023-04-30T20:59:59.691Z
  *               updatedAt: null
  *       400:
@@ -93,10 +93,10 @@
  * @swagger
  * /slido:
  *   get:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Retorna todas as perguntas cadastradas.
  *     description: Retorna um array de objetos com todas as perguntas cadastradas.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Slido
  *     responses:
@@ -137,15 +137,15 @@
  *                       format: date-time
  *             example:
  *               - _id: 1
- *                 question: pergunta 01
+ *                 question: "pergunta 01"
  *                 answers: []
- *                 author: andre@hotmail.com
+ *                 author: "andre@hotmail.com"
  *                 createdAt: 2023-03-30T20:59:59.691Z
  *                 updatedAt: null
  *               - _id: 2
- *                 question: pergunta 02
+ *                 question: "pergunta 02"
  *                 answers: []
- *                 author: andre@hotmail.com
+ *                 author: "andre@hotmail.com"
  *                 createdAt: 2023-04-30T20:59:59.691Z
  *                 updatedAt: null
  *       500:
@@ -156,10 +156,10 @@
  * @swagger
  * /slido/{id}:
  *   patch:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Atualiza as informações de uma pergunta ou resposta.
  *     description: Retorna um objeto com as informações atualizadas da pergunta ou resposta.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Slido
  *     parameters:
@@ -179,7 +179,7 @@
  *             properties:
  *               question:
  *                 type: string
- *                 example: Pergunta xxx editada
+ *                 example: "Pergunta xxx editada"
  *               answers:
  *                 type: array
  *                 example: [ "resposta 01", "resposta 02" ]
@@ -191,10 +191,10 @@
  *             schema:
  *               $ref: '#/components/schemas/slido'
  *             example:
- *               _id: abc123
- *               question: Pergunta xxx editada
+ *               _id: "abc123"
+ *               question: "Pergunta xxx editada"
  *               answers: [ "resposta 01", "resposta 02" ]
- *               author: andre@hotmail.com
+ *               author: "andre@hotmail.com"
  *               createdAt: 2023-04-30T20:59:59.691Z
  *               updatedAt: 2023-05-30T20:59:59.691Z
  *       400:
@@ -207,10 +207,10 @@
  * @swagger
  * /slido/{id}:
  *   delete:
+ *     security:
+ *       - bearerAuth: []
  *     summary: Deleta uma pergunta pelo seu ID.
  *     description: Deleta uma pergunta identificada pelo ID fornecido na rota.
- *     security:
- *       - jwt: []
  *     tags:
  *       - Slido
  *     parameters:
