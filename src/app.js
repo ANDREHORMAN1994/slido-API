@@ -13,10 +13,10 @@ app.use(cors({
 app.use(express.json());
 
 app.get('/', (_req, res) => {
-  res.send('Hey this is my API running 🥳');
+  res.send('SLIDO API RODANDO 🥳🥳🥳');
 });
 
-app.use(allRoutes);
+// app.use(allRoutes);
 
 app.use((err, _req, res, _next) => {
   const { message, statusCode } = err;
