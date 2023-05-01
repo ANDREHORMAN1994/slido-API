@@ -27,7 +27,7 @@ const html = `
   <h1>Bem Vindo ao Slido API 🥳🥳🥳</h1>
   <h2>Acesse a rota
     <strong>
-      <a href="${BASE_URL}/docs" >/docs</a>
+      <a href="${BASE_URL}/docs" target="_blank" >/docs</a>
     </strong>
   para mais informações!!</h2>
 </body>
