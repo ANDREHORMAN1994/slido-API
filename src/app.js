@@ -7,11 +7,7 @@ const allRoutes = require('./routes');
 const app = express();
 swagger(app);
 
-const corsOptions = {
-  origin: 'http://localhost:3001',
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (_req, res) => {
