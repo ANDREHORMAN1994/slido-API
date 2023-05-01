@@ -14,6 +14,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+  res.send('Hey this is my API running 🥳');
+});
+
 app.use(allRoutes);
 
 app.use((err, _req, res, _next) => {
