@@ -10,11 +10,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'http://localhost:3001',
-      description: 'Servidor de desenvolvimento',
-    },
-    {
-      url: 'https://api.minhaapi.com',
+      url: 'http://slido-api-production.up.railway.app',
       description: 'Servidor de produção',
     },
   ],
