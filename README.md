@@ -19,7 +19,7 @@ facilitando o controle de acesso e a gestão de permissões. Com essa funcionali
 
 Para ter acesso a informações mais detalhadas da Slido API, acesse a documentação através do link abaixo:
 
-[Documentação](http://slido-api-production.up.railway.app/docs)
+[Documentação Slido API](http://slido-api-production.up.railway.app/docs)
 
 
 ## Funcionalidades 🌟
