@@ -16,27 +16,17 @@
  *           type: string
  *           description: Pergunta do usuário.
  *         answers:
- *           type: array
- *           items:
- *             type: string
+ *           type: string
  *           description: Respostas do usuário.
  *         author:
  *           type: string
  *           description: Email do usuário que criou a pergunta.
  *         createdAt:
- *           type: object
+ *           type: string
  *           description: Data que a pergunta foi criada.
- *           properties:
- *             $date:
- *               type: string
- *               format: date-time
  *         updatedAt:
- *           type: object
+ *           type: string
  *           description: Data que a pergunta foi editada.
- *           properties:
- *             $date:
- *               type: string
- *               format: date-time
  *       example:
  *         question: "Primeira pergunta xxx1"
  *         answers: [ "resposta 01", "resposta 02", "resposta 03"]
