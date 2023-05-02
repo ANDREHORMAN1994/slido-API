@@ -1,5 +1,9 @@
+require('dotenv').config();
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+
+const url = process.env.BASE_URL || 'http://localhost:3001';
+const port = process.env.PORT || 3001;
 
 const swaggerDefinition = {
   openapi: '3.0.0',
@@ -10,8 +14,9 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'http://slido-api-production.up.railway.app',
-      description: 'Servidor de produção',
+      url,
+      description: url.includes('localhost')
+        ? 'Servidor de desenvolvimento' : 'Servidor de produção',
     },
   ],
   components: {
@@ -25,7 +30,7 @@ const swaggerDefinition = {
       },
     },
   },
-  host: 'localhost:3001', // substitua pelo seu domínio e porta.
+  host: url, // substitua pelo seu domínio e porta
   basePath: '/docs',
 };
 
