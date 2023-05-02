@@ -1,43 +1,168 @@
-# SLIDO API
-
-API criada para cadastrar usuários, realizar login como cliente ou admin, realizando o CRUD completo de perguntas e respostas, sendo capaz de criar, visualizar, editar e remover cada pergunta.
-
-## TASKS
-
- - Rota `/user`:
-    - Cadastrar usuários novos;
-    - Validação feita por email;
-    - Criptografia da senha;
+# SLIDO API 🥳
 
 
-<h1 align="center">
-<br>Padrão de commits, Utilizei a documentação do **Conventional Commits**, Commits Semânticos
-</h1>
+## Introdução 👋
 
-O commit semântico possui os elementos estruturais abaixo (tipos), que informam a intenção do seu commit ao utilizador(a) de seu código.
+A `Slido API` oferece recursos para o cadastro de usuários e para o
+gerenciamento completo de perguntas e respostas dos clientes. Com ela,
+é possível realizar um `CRUD` completo, sendo capaz de criar,
+visualizar, editar e remover cada pergunta ou resposta cadastrada.
 
-- `feat`- Commits do tipo feat indicam que seu trecho de código está incluindo um **novo recurso** (se relaciona com o MINOR do versionamento semântico).
+Além disso, a Slido API permite que os usuários realizem login como ```cliente ou admin```,
+facilitando o controle de acesso e a gestão de permissões. Com essa funcionalidade, é possível garantir a segurança e a privacidade dos dados cadastrados na plataforma.
 
-- `fix` - Commits do tipo fix indicam que seu trecho de código commitado está **solucionando um problema** (bug fix), (se relaciona com o PATCH do versionamento semântico).
+**Segue o Link de uso da API:**
 
-- `docs` - Commits do tipo docs indicam que houveram **mudanças na documentação**, como por exemplo no Readme do seu repositório. (Não inclui alterações em código).
-
-- `test` - Commits do tipo test são utilizados quando são realizadas **alterações em testes**, seja criando, alterando ou excluindo testes unitários. (Não inclui alterações em código)
-
-- `build` - Commits do tipo build são utilizados quando são realizadas modificações em **arquivos de build e dependências**.
-
-- `perf` - Commits do tipo perf servem para identificar quaisquer alterações de código que estejam relacionadas a **performance**.
-
-- `style` - Commits do tipo style indicam que houveram alterações referentes a **formatações de código**, semicolons, trailing spaces, lint... (Não inclui alterações em código).
-
-- `refactor` - Commits do tipo refactor referem-se a mudanças devido a **refatorações que não alterem sua funcionalidade**, como por exemplo, uma alteração no formato como é processada determinada parte da tela, mas que manteve a mesma funcionalidade, ou melhorias de performance devido a um code review.
-
-- `chore` - Commits do tipo chore indicam **atualizações de tarefas** de build, configurações de administrador, pacotes... como por exemplo adicionar um pacote no gitignore. (Não inclui alterações em código)
-
-- `ci` - Commits do tipo ci indicam mudanças relacionadas a **integração contínua** (_continuous integration_).
+ - `http://slido-api-production.up.railway.app/`
 
 
-## 💈 Padrões de emojis
+## Funcionalidades 💻
+
+A `Slido API` trabalha em cima de duas collections do mongoDB:
+
+ - Users;
+ - Slido;
+
+Em relação ao schema do `Users`, é possível acessar as seguintes rotas:
+
+- Rota `/user`:
+  - Método `post`;
+  - Cria um novo usuário com os dados fornecidos no corpo da requisição;
+  - Verifica se o `email` do usuário já existe no banco de dados;
+  - Realiza a Criptografia da senha do usuário;
+  - Valida os campos do `body`;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/user
+```
+
+
+- Rota `/login`:
+  - Método `post`;
+  - Autentica o usuário com email e a senha;
+  - Retorna um `token JWT` de acesso;
+  - Valida os campos do `body`;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/login
+```
+
+- Rota `/users/{id}`:
+  - Método `get`;
+  - Retorna um usuário com o ID especificado;
+  - Valida se o `id` é passado como parâmetro na rota;
+  - Valida se o `token JWT` de acesso é válido;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/users/{id}
+```
+
+- Rota `/users`:
+  - Método `get`;
+  - Retorna uma lista com todos os usuários cadastrados;
+  - Valida se o `token JWT` de acesso é válido;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/users
+```
+
+- Rota `/users/{id}`:
+  - Método `patch`;
+  - Retorna um usuário atualizado com o ID especificado;
+  - Valida se o `id` é passado como parâmetro na rota;
+  - Valida se o `token JWT` de acesso é válido;
+  - Valida os campos do `body`;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/users/{id}
+```
+
+- Rota `/users/{id}`:
+  - Método `delete`;
+  - Deleta o usuário identificado pelo ID fornecido na rota;
+  - Valida se o `id` é passado como parâmetro na rota;
+  - Valida se o `token JWT` de acesso é válido;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/users/{id}
+```
+
+Em relação ao schema do `Slido`, é possível acessar as seguintes rotas:
+
+- Rota `/slido`:
+  - Método `post`;
+  - Cria uma nova pergunta com os dados fornecidos no corpo da requisição;
+  - Valida se o `token JWT` de acesso é válido;
+  - Valida os campos do `body`;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/slido
+```
+
+- Rota `/slido`:
+  - Método `get`;
+  - Retorna uma lista com todas as perguntas cadastradas;
+  - Valida se o `token JWT` de acesso é válido;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/slido
+```
+
+- Rota `/slido/{id}`:
+  - Método `patch`;
+  - Retorna as informações atualizadas da pergunta ou resposta;
+  - Valida se o `id` é passado como parâmetro na rota;
+  - Valida se o `token JWT` de acesso é válido;
+  - Valida os campos do `body`;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/slido/{id}
+```
+
+- Rota `/slido/{id}`:
+  - Método `delete`;
+  - Deleta uma pergunta identificada pelo ID fornecido na rota;
+  - Valida se o `id` é passado como parâmetro na rota;
+  - Valida se o `token JWT` de acesso é válido;
+```BASH
+// Exemplo:
+
+  http://slido-api-production.up.railway.app/slido/{id}
+```
+
+
+## Documentação 📉
+
+Para ter acesso a informações detalhadas da `Slido API` acesse a [Documentação](http://slido-api-production.up.railway.app/docs) 🛠️
+
+
+## Tecnologias 👨‍💻
+
+Segue abaixo a lista de tecnologias utilizada no projeto:
+
+ - Node;
+ - Express;
+ - Nodemon;
+ - MongoDB;
+ - EsLint;
+ - Bcrypt;
+ - Json Web Token (JWT);
+ - Swagger;
+ - Railway;
+
+
+## Padrão de commits 💈
+
+Durante o desenvolvimento resolvi utilizar a documentação do **Conventional Commits**, para manter meus commits mais semânticos durante o desenvolvimento.
 
 <table>
   <thead>
@@ -211,7 +336,8 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
   </tbody>
 </table>
 
-## 💻 Exemplos
+
+## Exemplos de commits 👌
 
 <table>
   <thead>
