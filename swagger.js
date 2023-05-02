@@ -25,7 +25,7 @@ const swaggerDefinition = {
       },
     },
   },
-  host: 'localhost:3001', // substitua pelo seu domínio e porta
+  host: 'localhost:3001', // substitua pelo seu domínio e porta.
   basePath: '/docs',
 };
 
