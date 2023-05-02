@@ -1,6 +1,5 @@
 # SLIDO API 🥳
 
-
 ## Introdução 👋
 
 A `Slido API` oferece recursos para o cadastro de usuários e para o
@@ -8,156 +7,81 @@ gerenciamento completo de perguntas e respostas dos clientes. Com ela,
 é possível realizar um `CRUD` completo, sendo capaz de criar,
 visualizar, editar e remover cada pergunta ou resposta cadastrada.
 
-Além disso, a Slido API permite que os usuários realizem login como ```cliente ou admin```,
+Além disso, a Slido API permite que os usuários realizem login como `cliente ou admin`,
 facilitando o controle de acesso e a gestão de permissões. Com essa funcionalidade, é possível garantir a segurança e a privacidade dos dados cadastrados na plataforma.
 
-**Segue o Link de uso da API:**
 
- - `http://slido-api-production.up.railway.app/`
+## Como Usar 🚀
+
+**Para acessar a API, utilize o link a seguir:**
+
+[http://slido-api-production.up.railway.app/](http://slido-api-production.up.railway.app/)
+
+Para ter acesso a informações mais detalhadas da Slido API, acesse a documentação através do link abaixo:
+
+[Documentação](http://slido-api-production.up.railway.app/docs)
 
 
-## Funcionalidades 💻
+## Funcionalidades 🌟
 
-A `Slido API` trabalha em cima de duas collections do mongoDB:
+A Slido API trabalha em cima de duas collections do mongoDB:
 
- - Users;
- - Slido;
+ - `Users`
+ - `Slido`
 
-Em relação ao schema do `Users`, é possível acessar as seguintes rotas:
+Em relação ao schema do Users, é possível acessar as seguintes rotas:
 
-- Rota `/user`:
-  - Método `post`;
-  - Cria um novo usuário com os dados fornecidos no corpo da requisição;
-  - Verifica se o `email` do usuário já existe no banco de dados;
-  - Realiza a Criptografia da senha do usuário;
-  - Valida os campos do `body`;
+ - `POST /user`: cria um novo usuário com os dados fornecidos no corpo da requisição, verifica se o email do usuário já existe no banco de dados, realiza a criptografia da senha do usuário e valida os campos do body.
+
+ - `POST /login`: autentica o usuário com email e senha, retorna um token JWT de acesso e valida os campos do body.
+
+ - `GET /users/{id}`: retorna um usuário com o ID especificado, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
+
+ - `GET /users`: retorna uma lista com todos os usuários cadastrados e valida se o token JWT de acesso é válido.
+
+ - `PATCH /users/{id}`: retorna um usuário atualizado com o ID especificado, valida se o id é passado como parâmetro na rota, se o token JWT de acesso é válido e valida os campos do body.
+ **OBS 👀: Apenas user Admin tem acesso**
+
+ - `DELETE /users/{id}`: deleta o usuário identificado pelo ID fornecido na rota, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
+ **OBS 👀: Apenas user Admin tem acesso**
+
+
 ```BASH
-// Exemplo:
+// Exemplo de acesso para a rota get /users
 
-  http://slido-api-production.up.railway.app/user
+http://slido-api-production.up.railway.app/users
 ```
 
+Em relação ao schema do Slido, é possível acessar as seguintes rotas:
 
-- Rota `/login`:
-  - Método `post`;
-  - Autentica o usuário com email e a senha;
-  - Retorna um `token JWT` de acesso;
-  - Valida os campos do `body`;
+ - `POST /slido`: cria uma nova pergunta com os dados fornecidos no corpo da requisição, valida se o token JWT de acesso é válido e valida os campos do body.
+
+ - `GET /slido`: retorna uma lista com todas as perguntas cadastradas e valida se o token JWT de acesso é válido.
+
+ - `PATCH /slido/{id}`: retorna as informações atualizadas da pergunta ou resposta, valida se o id é passado como parâmetro na rota, se o token JWT de acesso é válido e valida os campos do body.
+
+ - `DELETE /slido/{id}`: deleta uma pergunta identificada pelo ID fornecido na rota, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
+
 ```BASH
-// Exemplo:
+// Exemplo de acesso para a rota get /slido
 
-  http://slido-api-production.up.railway.app/login
+http://slido-api-production.up.railway.app/slido
 ```
-
-- Rota `/users/{id}`:
-  - Método `get`;
-  - Retorna um usuário com o ID especificado;
-  - Valida se o `id` é passado como parâmetro na rota;
-  - Valida se o `token JWT` de acesso é válido;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/users/{id}
-```
-
-- Rota `/users`:
-  - Método `get`;
-  - Retorna uma lista com todos os usuários cadastrados;
-  - Valida se o `token JWT` de acesso é válido;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/users
-```
-
-- Rota `/users/{id}`:
-  - Método `patch`;
-  - Retorna um usuário atualizado com o ID especificado;
-  - Valida se o `id` é passado como parâmetro na rota;
-  - Valida se o `token JWT` de acesso é válido;
-  - Valida os campos do `body`;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/users/{id}
-```
-
-- Rota `/users/{id}`:
-  - Método `delete`;
-  - Deleta o usuário identificado pelo ID fornecido na rota;
-  - Valida se o `id` é passado como parâmetro na rota;
-  - Valida se o `token JWT` de acesso é válido;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/users/{id}
-```
-
-Em relação ao schema do `Slido`, é possível acessar as seguintes rotas:
-
-- Rota `/slido`:
-  - Método `post`;
-  - Cria uma nova pergunta com os dados fornecidos no corpo da requisição;
-  - Valida se o `token JWT` de acesso é válido;
-  - Valida os campos do `body`;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/slido
-```
-
-- Rota `/slido`:
-  - Método `get`;
-  - Retorna uma lista com todas as perguntas cadastradas;
-  - Valida se o `token JWT` de acesso é válido;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/slido
-```
-
-- Rota `/slido/{id}`:
-  - Método `patch`;
-  - Retorna as informações atualizadas da pergunta ou resposta;
-  - Valida se o `id` é passado como parâmetro na rota;
-  - Valida se o `token JWT` de acesso é válido;
-  - Valida os campos do `body`;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/slido/{id}
-```
-
-- Rota `/slido/{id}`:
-  - Método `delete`;
-  - Deleta uma pergunta identificada pelo ID fornecido na rota;
-  - Valida se o `id` é passado como parâmetro na rota;
-  - Valida se o `token JWT` de acesso é válido;
-```BASH
-// Exemplo:
-
-  http://slido-api-production.up.railway.app/slido/{id}
-```
-
-
-## Documentação 📉
-
-Para ter acesso a informações detalhadas da `Slido API` acesse a [Documentação](http://slido-api-production.up.railway.app/docs) 🛠️
 
 
 ## Tecnologias 👨‍💻
 
 Segue abaixo a lista de tecnologias utilizada no projeto:
 
- - Node;
- - Express;
- - Nodemon;
- - MongoDB;
- - EsLint;
- - Bcrypt;
- - Json Web Token (JWT);
- - Swagger;
- - Railway;
+ - `Node`: plataforma de desenvolvimento para criação de aplicações server-side em JavaScript;
+ - `Express`: framework web minimalista para Node.js;
+ - `Nodemon`: ferramenta que monitora as alterações no código e reinicia o servidor automaticamente;
+ - `MongoDB`: banco de dados NoSQL orientado a documentos;
+ - `EsLint`: ferramenta para análise estática de código JavaScript;
+ - `Bcrypt`: biblioteca para criptografia de senhas;
+ - `Json Web Token (JWT)`: padrão de token de acesso utilizado para autenticação e autorização em aplicações web;
+ - `Swagger`: ferramenta para documentação de APIs;
+ - `Railway`: plataforma de hospedagem de aplicativos Node.js em nuvem.
 
 
 ## Padrão de commits 💈

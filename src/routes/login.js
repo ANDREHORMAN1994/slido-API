@@ -8,8 +8,8 @@ loginRouter.post('/user', createPassHash, controllers.createUser);
 loginRouter.post('/login', controllers.login);
 
 loginRouter.use(validateToken);
-loginRouter.get('/users/:id', validateAdmin, controllers.getUserById);
-loginRouter.get('/users', validateAdmin, controllers.getAllUser);
+loginRouter.get('/users/:id', controllers.getUserById);
+loginRouter.get('/users', controllers.getAllUser);
 loginRouter.patch('/users/:id', validateAdmin, createPassHash, controllers.updateUser);
 loginRouter.delete('/users/:id', validateAdmin, controllers.deleteUserById);
 
