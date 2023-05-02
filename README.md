@@ -86,7 +86,7 @@ Segue abaixo a lista de tecnologias utilizada no projeto:
 
 ## Padrão de commits 💈
 
-Durante o desenvolvimento resolvi utilizar a documentação do **Conventional Commits**, para manter meus commits mais semânticos durante o desenvolvimento.
+Durante o desenvolvimento resolvi utilizar a documentação do **Conventional Commits**, para manter meus commits mais semânticos e fáceis de compreender.
 
 <table>
   <thead>
