@@ -15,11 +15,11 @@ facilitando o controle de acesso e a gestão de permissões. Com essa funcionali
 
 **Para acessar a API, utilize o link a seguir:**
 
-[http://slido-api-production.up.railway.app/](http://slido-api-production.up.railway.app/)
+[http://slido-api-production.up.railway.app/](http://slido-api-production.up.railway.app/){:target="_blank"}
 
 Para ter acesso a informações mais detalhadas da Slido API, acesse a documentação através do link abaixo:
 
-[Documentação](http://slido-api-production.up.railway.app/docs)
+[Documentação](http://slido-api-production.up.railway.app/docs){:target="_blank"}
 
 
 ## Funcionalidades 🌟
