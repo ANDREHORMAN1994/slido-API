@@ -40,10 +40,10 @@ Em relação ao schema do Users, é possível acessar as seguintes rotas:
  - `GET /users`: retorna uma lista com todos os usuários cadastrados e valida se o token JWT de acesso é válido.
 
  - `PATCH /users/{id}`: retorna um usuário atualizado com o ID especificado, valida se o id é passado como parâmetro na rota, se o token JWT de acesso é válido e valida os campos do body.
- **OBS 👀: Apenas user Admin tem acesso**
+    > **OBS 👀: Apenas user Admin tem acesso**
 
  - `DELETE /users/{id}`: deleta o usuário identificado pelo ID fornecido na rota, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
- **OBS 👀: Apenas user Admin tem acesso**
+    > **OBS 👀: Apenas user Admin tem acesso**
 
 
 ```BASH
