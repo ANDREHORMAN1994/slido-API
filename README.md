@@ -29,20 +29,26 @@ A Slido API trabalha em cima de duas collections do mongoDB:
  - `Users`
  - `Slido`
 
-Em relação ao schema do Users, é possível acessar as seguintes rotas:
+Em relação ao schema do `Users`, é possível acessar as seguintes rotas:
 
- - `POST /user`: cria um novo usuário com os dados fornecidos no corpo da requisição, verifica se o email do usuário já existe no banco de dados, realiza a criptografia da senha do usuário e valida os campos do body.
+ - `POST /user`
+ > Cria um novo usuário com os dados fornecidos no corpo da requisição, verifica se o email do usuário já existe no banco de dados, realiza a criptografia da senha do usuário e valida os campos do body.
 
- - `POST /login`: autentica o usuário com email e senha, retorna um token JWT de acesso e valida os campos do body.
+ - `POST /login`
+ > Autentica o usuário com email e senha, retorna um token JWT de acesso e valida os campos do body.
 
- - `GET /users/{id}`: retorna um usuário com o ID especificado, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
+ - `GET /users/{id}`
+ > Retorna um usuário com o ID especificado, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
 
- - `GET /users`: retorna uma lista com todos os usuários cadastrados e valida se o token JWT de acesso é válido.
+ - `GET /users`
+ > Retorna uma lista com todos os usuários cadastrados e valida se o token JWT de acesso é válido.
 
- - `PATCH /users/{id}`: retorna um usuário atualizado com o ID especificado, valida se o id é passado como parâmetro na rota, se o token JWT de acesso é válido e valida os campos do body.
+ - `PATCH /users/{id}`
+ > Retorna um usuário atualizado com o ID especificado, valida se o id é passado como parâmetro na rota, se o token JWT de acesso é válido e valida os campos do body.
     > **OBS 👀: Apenas user Admin tem acesso**
 
- - `DELETE /users/{id}`: deleta o usuário identificado pelo ID fornecido na rota, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
+ - `DELETE /users/{id}`
+ > Deleta o usuário identificado pelo ID fornecido na rota, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
     > **OBS 👀: Apenas user Admin tem acesso**
 
 
@@ -52,15 +58,19 @@ Em relação ao schema do Users, é possível acessar as seguintes rotas:
 http://slido-api-production.up.railway.app/users
 ```
 
-Em relação ao schema do Slido, é possível acessar as seguintes rotas:
+Em relação ao schema do `Slido`, é possível acessar as seguintes rotas:
 
- - `POST /slido`: cria uma nova pergunta com os dados fornecidos no corpo da requisição, valida se o token JWT de acesso é válido e valida os campos do body.
+ - `POST /slido`
+ > Cria uma nova pergunta com os dados fornecidos no corpo da requisição, valida se o token JWT de acesso é válido e valida os campos do body.
 
- - `GET /slido`: retorna uma lista com todas as perguntas cadastradas e valida se o token JWT de acesso é válido.
+ - `GET /slido`
+ > Retorna uma lista com todas as perguntas cadastradas e valida se o token JWT de acesso é válido.
 
- - `PATCH /slido/{id}`: retorna as informações atualizadas da pergunta ou resposta, valida se o id é passado como parâmetro na rota, se o token JWT de acesso é válido e valida os campos do body.
+ - `PATCH /slido/{id}`
+ > Retorna as informações atualizadas da pergunta ou resposta, valida se o id é passado como parâmetro na rota, se o token JWT de acesso é válido e valida os campos do body.
 
- - `DELETE /slido/{id}`: deleta uma pergunta identificada pelo ID fornecido na rota, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
+ - `DELETE /slido/{id}`
+ > Deleta uma pergunta identificada pelo ID fornecido na rota, valida se o id é passado como parâmetro na rota e se o token JWT de acesso é válido.
 
 ```BASH
 // Exemplo de acesso para a rota get /slido
@@ -73,15 +83,24 @@ http://slido-api-production.up.railway.app/slido
 
 Segue abaixo a lista de tecnologias utilizada no projeto:
 
- - `Node`: plataforma de desenvolvimento para criação de aplicações server-side em JavaScript;
- - `Express`: framework web minimalista para Node.js;
- - `Nodemon`: ferramenta que monitora as alterações no código e reinicia o servidor automaticamente;
- - `MongoDB`: banco de dados NoSQL orientado a documentos;
- - `EsLint`: ferramenta para análise estática de código JavaScript;
- - `Bcrypt`: biblioteca para criptografia de senhas;
- - `Json Web Token (JWT)`: padrão de token de acesso utilizado para autenticação e autorização em aplicações web;
- - `Swagger`: ferramenta para documentação de APIs;
- - `Railway`: plataforma de hospedagem de aplicativos Node.js em nuvem.
+ - `Node`
+ > Plataforma de desenvolvimento para criação de aplicações server-side em JavaScript;
+ - `Express`
+ > Framework web minimalista para Node.js;
+ - `Nodemon`
+ > Ferramenta que monitora as alterações no código e reinicia o servidor automaticamente;
+ - `MongoDB`
+ > Banco de dados NoSQL orientado a documentos;
+ - `EsLint`
+ > Ferramenta para análise estática de código JavaScript;
+ - `Bcrypt`
+ > Biblioteca para criptografia de senhas;
+ - `Json Web Token (JWT)`
+ > Padrão de token de acesso utilizado para autenticação e autorização em aplicações web;
+ - `Swagger`
+ > Ferramenta para documentação de APIs;
+ - `Railway`
+ > Plataforma de hospedagem de aplicativos Node.js em nuvem.
 
 
 ## Padrão de commits 💈
