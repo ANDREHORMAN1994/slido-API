@@ -3,7 +3,6 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
 const url = process.env.BASE_URL || 'http://localhost:3001';
-const port = process.env.PORT || 3001;
 
 const swaggerDefinition = {
   openapi: '3.0.0',
