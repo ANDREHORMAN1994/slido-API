@@ -5,7 +5,7 @@ const { env } = process;
 const {
   DB_HOST = 'localhost',
   DB_PORT = '27017',
-  DB_NAME = 'mydatabase',
+  DB_NAME = 'slido-api',
   MONGO_URL,
 } = env;
 
