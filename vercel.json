@@ -8,6 +8,10 @@
     {
       "src": "src/app.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/docs",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
