@@ -1,39 +1,38 @@
 require('dotenv').config();
-const { MongoClient } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const { env } = process;
 const {
   DB_HOST = 'localhost',
   DB_PORT = '27017',
   DB_NAME = 'mydatabase',
-  MONGOUSER,
-  MONGOPASSWORD,
-  MONGOHOST,
-  MONGOPORT,
   MONGO_URL,
 } = env;
 
 const LOCAL_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
-const MONGO_URI = `mongodb://${MONGOUSER}:${MONGOPASSWORD}@${MONGOHOST}:${MONGOPORT}`;
+const URI = MONGO_URL || LOCAL_URI;
 
-const verifyMongo = MONGOUSER && MONGOPASSWORD && MONGOHOST && MONGOPORT;
+const client = new MongoClient(URI, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
 
-const URI = MONGO_URL || (verifyMongo && MONGO_URI) || LOCAL_URI;
-
-const client = new MongoClient(
-  URI,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-);
-
-async function connectToMongoDB() {
+async function run() {
   try {
+    // Connect the client to the server
     await client.connect();
-    console.log('Connected to MongoDB!');
-  } catch (err) {
-    console.log(err);
+
+    // Send a ping to confirm a successful connection
+    await client.db('admin').command({ ping: 1 });
+    console.log('You successfully connected to MongoDB!');
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
   }
 }
-
-connectToMongoDB();
+run().catch(console.dir);
 
 module.exports = client.db();
