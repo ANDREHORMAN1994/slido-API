@@ -1,6 +1,7 @@
 require('dotenv').config();
 const app = require('./app');
 
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
+const URL = process.env.BASE_URL || 'http://localhost:3001';
 
-app.listen(port, () => console.log(`Rodando na porta ${port}\nAcesse: http://localhost:${port}/`));
+app.listen(PORT, () => console.log(`Rodando na porta ${PORT}\nAcesse: ${URL}/`));
