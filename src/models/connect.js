@@ -5,34 +5,31 @@ const { env } = process;
 const {
   DB_HOST = 'localhost',
   DB_PORT = '27017',
-  DB_NAME = 'slido-api',
+  DB_NAME = 'mydatabase',
   MONGO_URL,
 } = env;
 
-const LOCAL_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
-const URI = MONGO_URL || LOCAL_URI;
+// Mongo Local URI
+// const LOCAL_URI = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+// const URI = LOCAL_URI;
 
-const client = new MongoClient(URI, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+// Mongo Atlas URI
+const URI = MONGO_URL;
 
-async function run() {
+const client = new MongoClient(
+  URI,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+);
+
+async function connectToMongoDB() {
   try {
-    // Connect the client to the server
     await client.connect();
-
-    // Send a ping to confirm a successful connection
-    await client.db('admin').command({ ping: 1 });
     console.log('You successfully connected to MongoDB!');
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+  } catch (err) {
+    console.log(err);
   }
 }
-run().catch(console.dir);
+
+connectToMongoDB();
 
 module.exports = client.db();
