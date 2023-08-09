@@ -1,7 +1,5 @@
-<h1 align="center">SLIDO API 🥳</h1>
-
 <h1 align="center">
-  <img alt="Happy" src="./.github/slido-api.png" height="200px" />
+  <p>SLIDO API 🥳</p>
   <p>Api Node.js | Express.js | MongoDB</p>
 </h1>
 
@@ -13,6 +11,11 @@
   <a href="#padrão-de-commits-barber">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://slido-api.onrender.com/" target="_blank">Aplicação no Render</a>
 </p>
+<br/>
+
+<p align="center">
+  <img alt="design do projeto" width="650px" src="./.github/slido-api.png" />
+<p>
 
 ## Sobre :wave:
 
