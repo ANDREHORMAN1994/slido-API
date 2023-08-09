@@ -117,7 +117,7 @@ Segue abaixo a lista de tecnologias utilizada no projeto:
  > Plataforma de hospedagem de aplicativos Node.js em nuvem.
 
 
-## Padrão de commits :baber:
+## :bookmark: Padrão de commits
 
 Durante o desenvolvimento resolvi utilizar a documentação do **Conventional Commits**, para manter meus commits mais semânticos e fáceis de compreender.
 
