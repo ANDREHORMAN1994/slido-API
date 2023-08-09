@@ -6,15 +6,15 @@
 </h1>
 
 <p align="center">
-  <a href="#sobre-👋">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#como-usar-🚀">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#funcionalidades-🌟">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#tecnologias-👨‍💻">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#padrão-de-commits-baber">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#sobre-wave">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#como-usar-rocket">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#funcionalidades-star">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias-man_technologist">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#padrão-de-commits-barber">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://slido-api.onrender.com/" target="_blank">Aplicação no Render</a>
 </p>
 
-## Sobre 👋
+## Sobre :wave:
 
 A `Slido API` oferece recursos para o cadastro de usuários e para o
 gerenciamento completo de perguntas e respostas dos clientes. Com ela,
@@ -25,7 +25,7 @@ Além disso, a Slido API permite que os usuários realizem login como `cliente o
 facilitando o controle de acesso e a gestão de permissões. Com essa funcionalidade, é possível garantir a segurança e a privacidade dos dados cadastrados na plataforma.
 
 
-## Como Usar 🚀
+## Como Usar :rocket:
 
 **Para acessar a API, utilize o link a seguir:**
 
@@ -36,7 +36,7 @@ Para ter acesso a informações mais detalhadas da Slido API, acesse a documenta
 [Documentação Slido API](http://slido-api-production.up.railway.app/docs)
 
 
-## Funcionalidades 🌟
+## Funcionalidades :star:
 
 A Slido API trabalha em cima de duas collections do mongoDB:
 
@@ -93,7 +93,7 @@ http://slido-api-production.up.railway.app/slido
 ```
 
 
-## Tecnologias 👨‍💻
+## Tecnologias :man_technologist:
 
 Segue abaixo a lista de tecnologias utilizada no projeto:
 
@@ -117,7 +117,7 @@ Segue abaixo a lista de tecnologias utilizada no projeto:
  > Plataforma de hospedagem de aplicativos Node.js em nuvem.
 
 
-## :baber: Padrão de commits
+## Padrão de commits :barber:
 
 Durante o desenvolvimento resolvi utilizar a documentação do **Conventional Commits**, para manter meus commits mais semânticos e fáceis de compreender.
 
