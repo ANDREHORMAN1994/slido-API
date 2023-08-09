@@ -29,11 +29,11 @@ facilitando o controle de acesso e a gestão de permissões. Com essa funcionali
 
 **Para acessar a API, utilize o link a seguir:**
 
-[http://slido-api-production.up.railway.app/](http://slido-api-production.up.railway.app/)
+[https://slido-api.onrender.com/](https://slido-api.onrender.com/)
 
 Para ter acesso a informações mais detalhadas da Slido API, acesse a documentação através do link abaixo:
 
-[Documentação Slido API](http://slido-api-production.up.railway.app/docs)
+[Documentação Slido API](https://slido-api.onrender.com/docs)
 
 
 ## Funcionalidades :star:
@@ -69,7 +69,7 @@ Em relação ao schema do `Users`, é possível acessar as seguintes rotas:
 ```BASH
 // Exemplo de acesso para a rota get /users
 
-http://slido-api-production.up.railway.app/users
+https://slido-api.onrender.com/users
 ```
 
 Em relação ao schema do `Slido`, é possível acessar as seguintes rotas:
@@ -89,7 +89,7 @@ Em relação ao schema do `Slido`, é possível acessar as seguintes rotas:
 ```BASH
 // Exemplo de acesso para a rota get /slido
 
-http://slido-api-production.up.railway.app/slido
+https://slido-api.onrender.com/slido
 ```
 
 
