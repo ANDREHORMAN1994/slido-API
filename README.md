@@ -10,7 +10,7 @@
   <a href="#como-usar-🚀">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#funcionalidades-🌟">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tecnologias-👨‍💻">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#padrão-de-commits-💈">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#padrão-de-commits-U+1F488">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://slido-api.onrender.com/" target="_blank">Aplicação no Render</a>
 </p>
 
