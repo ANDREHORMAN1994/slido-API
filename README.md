@@ -10,7 +10,7 @@
   <a href="#como-usar-🚀">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#funcionalidades-🌟">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tecnologias-👨‍💻">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#padrão-de-commits-barberpole">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#padrão-de-commits-baber">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://slido-api.onrender.com/" target="_blank">Aplicação no Render</a>
 </p>
 
@@ -117,7 +117,7 @@ Segue abaixo a lista de tecnologias utilizada no projeto:
  > Plataforma de hospedagem de aplicativos Node.js em nuvem.
 
 
-## Padrão de commits 💈
+## Padrão de commits :baber:
 
 Durante o desenvolvimento resolvi utilizar a documentação do **Conventional Commits**, para manter meus commits mais semânticos e fáceis de compreender.
 
