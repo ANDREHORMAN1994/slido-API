@@ -1,6 +1,20 @@
-# SLIDO API 🥳
+<h1 align="center">SLIDO API 🥳</h1>
 
-## Introdução 👋
+<h1 align="center">
+  <img alt="Happy" src="./.github/slido-api.png" height="200px" />
+  <p>Api Node.js | Express.js | MongoDB</p>
+</h1>
+
+<p align="center">
+  <a href="#sobre-👋">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#como-usar-🚀">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#funcionalidades-🌟">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias-👨‍💻">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#padrão-de-commits-💈">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://slido-api.onrender.com/" target="_blank">Aplicação no Render</a>
+</p>
+
+## Sobre 👋
 
 A `Slido API` oferece recursos para o cadastro de usuários e para o
 gerenciamento completo de perguntas e respostas dos clientes. Com ela,
