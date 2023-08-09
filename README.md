@@ -113,8 +113,8 @@ Segue abaixo a lista de tecnologias utilizada no projeto:
  > Padrão de token de acesso utilizado para autenticação e autorização em aplicações web;
  - `Swagger`
  > Ferramenta para documentação de APIs;
- - `Railway`
- > Plataforma de hospedagem de aplicativos Node.js em nuvem.
+ - `Render`
+ > Plataforma de hospedagem de aplicativos em nuvem.
 
 
 ## Padrão de commits :barber:
