@@ -10,7 +10,7 @@
   <a href="#como-usar-🚀">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#funcionalidades-🌟">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tecnologias-👨‍💻">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#padrão-de-commits-U+1F488">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#padrão-de-commits-barberpole">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://slido-api.onrender.com/" target="_blank">Aplicação no Render</a>
 </p>
 
@@ -366,9 +366,9 @@ Durante o desenvolvimento resolvi utilizar a documentação do **Conventional Co
     </tr>
     <tr>
       <td>
-        <code>git commit -m ":bulb: docs: Comentários sobre a função LoremIpsum( )"</code>
+        <code>git commit -m ":bulb: docs: Comentários novos"</code>
       </td>
-      <td>💡 docs: Comentários sobre a função LoremIpsum( )</td>
+      <td>💡 docs: Comentários novos</td>
     </tr>
   </tbody>
 </table>
