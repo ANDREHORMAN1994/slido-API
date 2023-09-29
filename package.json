@@ -1,7 +1,7 @@
 {
   "name": "slido-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Slido API oferece recursos para o cadastro de usuários e para o gerenciamento completo de perguntas e respostas dos clientes.",
   "main": "./src/index.js",
   "engines": {
     "node": "18.x"
@@ -9,9 +9,9 @@
   "scripts": {
     "start": "nodemon ./dist",
     "dev": "nodemon ./src",
+    "swagger": "node swagger.js",
     "build": "babel ./src -d ./dist",
-    "lint": "eslint ./src",
-    "swagger-autogen": "node swagger.js"
+    "lint": "eslint ./src"
   },
   "keywords": [],
   "author": "",
