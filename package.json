@@ -11,6 +11,7 @@
     "dev": "nodemon ./src",
     "swagger": "node swagger.js",
     "build": "npm run swagger && babel ./src -d ./dist",
+    "vercel-build": "npm run build",
     "lint": "eslint ./src"
   },
   "keywords": [],
