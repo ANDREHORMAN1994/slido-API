@@ -6,6 +6,7 @@ const swaggerFile = require('../swagger_output.json');
 const allRoutes = require('./routes');
 const html = require('./utils/initialHTML');
 
+const CDN_SWAGGER_UI = 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
 const app = express();
 const corsOptions = {
   origin: '*',
@@ -20,7 +21,7 @@ app.get('/', (_req, res) => {
   res.send(html);
 });
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile, { customCss: CDN_SWAGGER_UI }));
 app.use(allRoutes);
 
 app.use((err, _req, res, _next) => {

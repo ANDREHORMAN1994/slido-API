@@ -1,10 +1,6 @@
 require('dotenv').config();
 
-const {
-  env: {
-    BASE_URL = 'http://localhost:3001',
-  },
-} = process;
+const URL = process.env.BASE_URL || 'http://localhost:3001';
 
 const html = `
 <!DOCTYPE html>
@@ -85,7 +81,7 @@ const html = `
         dados cadastrados na plataforma.</p>
       <h2 class="message-card-link">Acesse a rota
         <strong>
-          <a href="${BASE_URL}/docs">/docs</a>
+          <a href="${URL}/docs">/docs</a>
         </strong>
         para mais informações!!
       </h2>

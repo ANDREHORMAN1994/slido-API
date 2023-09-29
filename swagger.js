@@ -1,19 +1,19 @@
 require('dotenv').config();
 const swaggerAutogen = require('swagger-autogen')();
 
-const outputFile = './swagger_output.json';
-const endpointsFiles = ['./src/app.js', './src/routes/*.js'];
-const url = process.env.BASE_URL || 'http://localhost:3001';
+const URL = process.env.BASE_URL || 'http://localhost:3001';
+const OUTPUTFILE = './swagger_output.json';
+const ENDPOINTSFILES = ['./src/app.js', './src/routes/*.js'];
 
-const doc = {
+const DOC = {
   info: {
     version: '1.0.0',
     title: 'Slido API',
     description: 'Documentação da minha API',
   },
-  host: url.split('//')[1],
+  host: URL.split('//')[1],
   basePath: '/',
-  schemes: url.includes('https') ? ['https'] : ['http'],
+  schemes: URL.includes('https') ? ['https'] : ['http'],
   consumes: ['application/json'],
   produces: ['application/json'],
   tags: [
@@ -53,4 +53,4 @@ const doc = {
 };
 
 // Gere a documentação Swagger
-swaggerAutogen(outputFile, endpointsFiles, doc);
+swaggerAutogen(OUTPUTFILE, ENDPOINTSFILES, DOC);
