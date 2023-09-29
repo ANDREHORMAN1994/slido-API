@@ -1,16 +1,23 @@
 require('express-async-errors');
 const express = require('express');
 const cors = require('cors');
-const swagger = require('./swagger');
+const swaggerUi = require('swagger-ui-express');
 const allRoutes = require('./routes');
 const html = require('./utils/initialHTML');
+// const swagger = require('./swagger');
+const swaggerFile = require('../swagger_output.json');
 
 const app = express();
-swagger(app);
-
-app.use(cors({
+const corsOptions = {
   origin: '*',
-}));
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+// swagger(app);
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (_req, res) => {
