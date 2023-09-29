@@ -10,7 +10,7 @@
     "start": "nodemon ./dist",
     "dev": "nodemon ./src",
     "swagger": "node swagger.js",
-    "build": "babel ./src -d ./dist",
+    "build": "npm run swagger && babel ./src -d ./dist",
     "lint": "eslint ./src"
   },
   "keywords": [],

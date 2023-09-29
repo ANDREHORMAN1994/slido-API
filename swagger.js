@@ -53,6 +53,4 @@ const doc = {
 };
 
 // Gere a documentação Swagger
-swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-  require('./src/index.js');
-});
+swaggerAutogen(outputFile, endpointsFiles, doc);
