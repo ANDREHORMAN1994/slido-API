@@ -9,7 +9,7 @@
   <a href="#funcionalidades-star">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tecnologias-man_technologist">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#padrão-de-commits-barber">Padrão de commits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://slido-api.onrender.com/" target="_blank">Aplicação no Render</a>
+  <a href="https://slido-api.vercel.app/" target="_blank">Aplicação na Vercel</a>
 </p>
 <br/>
 
@@ -116,8 +116,8 @@ Segue abaixo a lista de tecnologias utilizada no projeto:
  > Padrão de token de acesso utilizado para autenticação e autorização em aplicações web;
  - `Swagger`
  > Ferramenta para documentação de APIs;
- - `Render`
- > Plataforma de hospedagem de aplicativos em nuvem.
+ - `Vercel`
+ > Plataforma de hospedagem voltada para aplicações web modernas e escaláveis.
 
 
 ## Padrão de commits :barber:
