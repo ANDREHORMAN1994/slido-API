@@ -21,7 +21,7 @@ app.get('/', (_req, res) => {
   res.send(html);
 });
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile, { customCss: CDN_SWAGGER_UI }));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile, { customCssUrl: CDN_SWAGGER_UI }));
 app.use(allRoutes);
 
 app.use((err, _req, res, _next) => {
