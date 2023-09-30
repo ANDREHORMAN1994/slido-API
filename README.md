@@ -32,7 +32,7 @@ facilitando o controle de acesso e a gestão de permissões. Com essa funcionali
 
 **Para acessar a API, utilize o link a seguir:**
 
-[https://slido-api.onrender.com/](https://slido-api.vercel.app/)
+[https://slido-api.vercel.app/](https://slido-api.vercel.app/)
 
 Para ter acesso a informações mais detalhadas da Slido API, acesse a documentação através do link abaixo:
 
