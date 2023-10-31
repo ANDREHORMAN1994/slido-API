@@ -1,6 +1,6 @@
 <h1 align="center">
   <p>SLIDO API 🥳</p>
-  <p>Api Node.js | Express.js | MongoDB</p>
+  <span>Api Node.js | Express.js | MongoDB</span>
 </h1>
 
 <p align="center">
